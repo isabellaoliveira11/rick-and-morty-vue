@@ -9,6 +9,8 @@ import LocationCard from './components/LocationCard.vue'
 import SearchBar from './components/SearchBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import Footer from './components/Footer.vue'
+import TopBar from './components/TopBar.vue'
+import { isDark } from './theme'
 
 type Character = {
   id: string
@@ -65,46 +67,49 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="top" class="min-h-screen bg-black text-white space-y-16">
-    <!-- Hero -->
-    <HeroSection />
+  <div :class="{ dark: isDark }">
+    <TopBar />
+    <div id="top" class="min-h-screen bg-[var(--bg)] text-[var(--text)] space-y-16 transition-all">
+      <!-- Hero -->
+      <HeroSection />
 
-    <!-- Navegação -->
-    <nav class="flex justify-center gap-4 px-6">
-      <a href="#characters" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Personagens</a>
-      <a href="#episodes" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Episódios</a>
-      <a href="#locations" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Localizações</a>
-    </nav>
+      <!-- Navegação -->
+      <nav class="flex justify-center gap-4 px-6">
+        <a href="#characters" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Personagens</a>
+        <a href="#episodes" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Episódios</a>
+        <a href="#locations" class="bg-zinc-800 px-4 py-2 rounded-full hover:bg-zinc-700">Localizações</a>
+      </nav>
 
-    <!-- Personagens -->
-    <section id="characters" class="px-6">
-      <h2 class="text-2xl font-bold mb-4">Personagens</h2>
-      <div class="flex justify-center mb-6">
-        <SearchBar @search="fetchCharacters" />
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <CharacterCard v-for="char in characters" :key="char.id" :character="char" />
-      </div>
-    </section>
+      <!-- Personagens -->
+      <section id="characters" class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-4">Personagens</h2>
+        <div class="flex justify-center mb-6">
+          <SearchBar @search="fetchCharacters" />
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <CharacterCard v-for="char in characters" :key="char.id" :character="char" />
+        </div>
+      </section>
 
-    <!-- Episódios -->
-    <section id="episodes" class="px-6">
-      <h2 class="text-2xl font-bold mb-4">Episódios</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <EpisodeCard v-for="ep in episodes" :key="ep.id" :episode="ep" />
-      </div>
-    </section>
+      <!-- Episódios -->
+      <section id="episodes" class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-4">Episódios</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <EpisodeCard v-for="ep in episodes" :key="ep.id" :episode="ep" />
+        </div>
+      </section>
 
-    <!-- Localizações -->
-    <section id="locations" class="px-6">
-      <h2 class="text-2xl font-bold mb-4">Localizações</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <LocationCard v-for="loc in locations" :key="loc.id" :location="loc" />
-      </div>
-    </section>
+      <!-- Localizações -->
+      <section id="locations" class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold mb-4">Localizações</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <LocationCard v-for="loc in locations" :key="loc.id" :location="loc" />
+        </div>
+      </section>
 
-    <!-- Footer -->
-    <Footer />
+      <!-- Footer -->
+      <Footer />
+    </div>
   </div>
 </template>
 

@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --BLACK-A: #1a1a1a;
+  --BLACK-B: #1e1e20;
+  --BLUE-A: #11b0c8;
+  --BLUE-B: #42b4ca;
+  --PEAR: #bfde42;
+  --RED: #de4242;
+  --MAX-CONTENT-WIDTH: 1240px;
+  --WHITE: #fff;
+
+  --BTN-BACKGROUND: transparent;
+  --FONT-COLOR: #111111;
+  --CARD-BACKGROUND: #f0f0f0;
+  --CARD-BACKGROUND-HOVER: #e5e5e5;
+
+  --bg: #ffffff;
+  --text: #111111;
+  --card: #f0f0f0;
+}
+
+html.dark {
+  --BTN-BACKGROUND: #313234;
+  --FONT-COLOR: #fff;
+  --CARD-BACKGROUND: #1a1a1a;
+  --CARD-BACKGROUND-HOVER: #313234;
+
+  --bg: #0a0a0a;
+  --text: #ffffff;
+  --card: #1a1a1a;
+
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  font-family: 'Inter';
+  transition: all 0.4s ease-in-out;
+  color: var(--FONT-COLOR);
+}
+
+h1 { font-size: 48px; font-weight: 700; }
+h2 { font-size: 32px; font-weight: 400; }
+h3 { font-size: 24px; font-weight: 700; }
+h4 { font-size: 16px; font-weight: 400; }
+p  { font-size: 14px; font-weight: 400; }
+
+button {
+  background: var(--BTN-BACKGROUND);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Inter';
+}
+
+@media (max-width: 720px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 16px; }
+  h4 { font-size: 14px; }
+  p  { font-size: 12px; }
+}

@@ -1,8 +1,9 @@
+// src/graphql/queries.ts
 import { gql } from '@apollo/client/core'
 
 export const GET_CHARACTERS = gql`
-  query {
-    characters(page: 1) {
+  query ($name: String) {
+    characters(page: 1, filter: { name: $name }) {
       results {
         id
         name

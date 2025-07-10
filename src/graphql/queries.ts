@@ -17,3 +17,27 @@ export const GET_CHARACTERS = gql`
     }
   }
 `
+
+export const GET_EPISODES = gql`
+  query {
+    episodes(page: 1) {
+      results {
+        id
+        name
+      }
+    }
+  }
+`
+
+export const GET_LOCATIONS = gql`
+  query {
+    locations(page: 1) {
+      results {
+        id
+        name
+        type
+        dimension
+      }
+    }
+  }
+`

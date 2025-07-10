@@ -8,13 +8,14 @@
       class="bg-transparent outline-none text-white flex-1 placeholder-zinc-400"
     />
     <button @click="emitSearch" class="text-zinc-400 hover:text-white transition">
-      🔍
+      <Search class="w-4 h-4" />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { Search } from 'lucide-vue-next'
 
 const searchTerm = ref('')
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 p-4 rounded-xl shadow-lg text-center">
+  <div class="p-4 rounded-xl shadow-lg text-center" style="background-color: #3C3E44">
     <img
       :src="character.image"
       :alt="character.name"

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-zinc-900 p-4 rounded-xl flex flex-col justify-between h-full">
+  <div class="p-4 rounded-xl shadow-lg text-center" style="background-color: #3C3E44">
     <div>
       <p class="text-sm text-zinc-400 mb-1">{{ location.type }}</p>
       <h3 class="text-lg font-bold mb-1">{{ location.name }}</h3>
